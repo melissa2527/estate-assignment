@@ -1,0 +1,39 @@
+.textalign-right {
+    float:right;
+}
+
+.estates {
+    display:flex;
+    justify-content: center;
+    padding: auto;
+
+    .estate-card {
+        border-radius: .25rem;
+        border: .05em solid lightgray;
+        margin: .5em;
+        
+
+        .estate-img {
+            margin: .5em;
+            height: 12em;
+        }
+
+        .estate-company img {
+            width: 3em;
+        }
+        p {
+            border: 1px solid blue;
+
+        }
+
+        // .right {
+        //     text-align: right;
+        // }
+    }
+}
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}

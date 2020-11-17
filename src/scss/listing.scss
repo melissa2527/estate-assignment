@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.estate-list {
+    
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: .25rem;
+
+    .estate-details {
+        cursor: pointer;
+    }
+    
+    // .estate-list {
+    //     display: flex;
+    //     flex-direction: row;
+    //     margin: .25rem;
+    // }
+
+    .estate-list-img {
+        width: 6.5rem;
+        height: 4rem;
+        max-width: 8vw;
+        margin: .2rem;
+    }
+
+    div {
+        list-style-type: none;
+        font-size: .5rem;
+        max-width: 8vw;
+        margin: .2rem;
+    }
+
+
+}
