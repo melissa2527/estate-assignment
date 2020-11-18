@@ -1,6 +1,5 @@
-.textalign-right {
-    float:right;
-}
+// $font: Arial;
+// $font-size: 1em;
 
 .estates {
     display:flex;
@@ -8,32 +7,28 @@
     padding: auto;
 
     .estate-card {
+        display: block;
         border-radius: .25rem;
-        border: .05em solid lightgray;
+        border: .05em solid lightslategray;
         margin: .5em;
-        
+        width: 20em;
 
-        .estate-img {
+        img {
             margin: .5em;
             height: 12em;
         }
-
-        .estate-company img {
-            width: 3em;
+        .estate__name {
+            font-weight: lighter;
         }
         p {
-            border: 1px solid blue;
+            border: .05em solid rgba(112, 103, 105, .5);
+            font-weight: bold;
+            // font-size: $font-size;
 
         }
-
-        // .right {
-        //     text-align: right;
-        // }
+        .textalign--right {
+            float:right;
+            font-weight: lighter;
+        }
     }
-}
-.red {
-    background-color: red;
-}
-.green {
-    background-color: green;
 }

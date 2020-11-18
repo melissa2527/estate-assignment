@@ -5,7 +5,7 @@
 
 .estate-list {
     
-    height: 30vh;
+    max-height: 30vh;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -14,18 +14,20 @@
     .estate-details {
         cursor: pointer;
     }
-    
-    // .estate-list {
-    //     display: flex;
-    //     flex-direction: row;
-    //     margin: .25rem;
-    // }
 
-    .estate-list-img {
+    .estate-list__img {
         width: 6.5rem;
         height: 4rem;
         max-width: 8vw;
         margin: .2rem;
+    }
+
+    .company__logo img {
+        width: 3em;
+    }
+
+    .estate-list__img:hover {
+        box-shadow: 2px 2px 2px solid gray;
     }
 
     div {

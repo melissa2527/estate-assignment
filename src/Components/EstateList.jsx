@@ -1,46 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import '../scss/listing.scss';
-import '../scss/estates.scss';
-// import Estates from './Estates.jsx';
-
-// const red = {
-//     backgroundColor: 'red'
-// }
-// const green = {
-//     backgroundColor: 'green'
-// }
+import Estates from './Estates.jsx';
+import '../scss/estate-list.scss';
 
 
 const EstateListing = () => {
 
     const [estates, setEstates] = useState([]);
-    const [compareEstates, setCompareEstates] = useState([]);
-    const [color, setColor] = useState('');
-    // const {prize_czk: price} = compareEstates;
-    const estateA = compareEstates[0];
-    const estateB = compareEstates[1];
-    const isBackgroundRed = true;
-    // const color = isBackgroundRed ? 'red' : 'green';
-
-    // const largestNumber = (compareEstates) => {
-    //     let highest = 0;
-    //     for (let i=0; i < compareEstates.length; i++) {
-    //         if (compareEstates[i] > highest) {
-    //             highest = compareEstates[i];
-    //             console.log(highest)
-    //         }
-    //     }
-    //     return highest
-    // }
-
-    const higherNumber = (estateA, estateB) => {
-        if (estateA.prize_czk > estateB.prize_czk) {
-           return isBackgroundRed = true
-        } else {
-            return isBackgroundRed = false
-        }
-    }
+    const [isLoading, setIsLoading] = useState(true);
+    
 
     useEffect(() => {
     async function fetchData() {
@@ -48,49 +16,32 @@ const EstateListing = () => {
         'https://estate-comparison.codeboot.cz/list.php',
       );
         const result10 = response.data.slice(0, 10);
-        const compareEstates = response.data.slice(4,6);
-        setCompareEstates(compareEstates);
-        // higherValue(compareEstates);
-        higherNumber(compareEstates);
+        console.log(result10)
         setEstates(result10);
+        setIsLoading(false);
     }
     fetchData();
   }, []); 
-   
+
     return (
         <div className="container">
-
+            <div>
+            {isLoading ? <h1>Loading...</h1> :
+                
             <div className="estate-list">
                 {estates.map(estate  => (
                     <div key={estate.id}>
-                        <img className="estate-list-img" src={estate.images[0]} alt={estate.name}/>
-                        <p className="estate-list-name">{estate.name}</p>
+                        <img className="estate-list__img" src={estate.images[0]} alt={estate.name}/>
+                        <p className="estate-list__name">{estate.name}</p>
                     </div>
                 ))}
             </div>
-
-            <div className="estates">
-                        {compareEstates.map((i, index) => (
-                        <div key={index} className="estate-card">
-                    <img className="estate-img" src={i.images[0]} alt={i.name}/>
-
-                    <div className="estate-description">
-                        <p>{i.name}</p>
-                        {/* {{ backgroundColor: true ? "red" : "green" }} */}
-                        {/* estateA.prize_czk > estateB.prize_czk */}
-                        <p style={{backgroundColor: color}}><strong>Price</strong><span className="textalign-right">{i.prize_czk}</span></p>
-                        <p><strong>Locality</strong><span className="textalign-right">{i.locality}</span></p>
-                        <p style={{backgroundColor: (estateA.building_area > estateB.building_area) ? "green" : "red" }}><strong>Floor area</strong><span className="textalign-right">{i.building_area}</span></p>
-                        <p style={{backgroundColor: (estateA.land_area > estateB.land_area) ? "green" : "red" }}><strong>Land area</strong> <span className="textalign-right">{i.land_area}</span></p>
-                        <div>{i.company_name !== null ? 
-                            <div className="estate-company"><img src={i.company_logo} alt={i.company_logo}/> 
-                            <span>{i.company_name}</span></div> 
-                            : <div></div> }</div>
-                    </div>
-                </div>
-                ))}
+            }
+            
+            <Estates />
             </div>
-            </div>
+            
+        </div>
         )
     }
             
