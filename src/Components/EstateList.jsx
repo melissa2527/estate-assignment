@@ -16,9 +16,12 @@ const EstateListing = () => {
 
     const [estates, setEstates] = useState([]);
     const [compareEstates, setCompareEstates] = useState([]);
-    const {prize_czk: price} = compareEstates;
+    const [color, setColor] = useState('');
+    // const {prize_czk: price} = compareEstates;
     const estateA = compareEstates[0];
     const estateB = compareEstates[1];
+    const isBackgroundRed = true;
+    // const color = isBackgroundRed ? 'red' : 'green';
 
     // const largestNumber = (compareEstates) => {
     //     let highest = 0;
@@ -31,13 +34,13 @@ const EstateListing = () => {
     //     return highest
     // }
 
-    // const higherNumber = (estateA, estateB) => {
-    //     if (estateA.price > estateB.price) {
-           
-    //     } else {
-            
-    //     }
-    // }
+    const higherNumber = (estateA, estateB) => {
+        if (estateA.prize_czk > estateB.prize_czk) {
+           return isBackgroundRed = true
+        } else {
+            return isBackgroundRed = false
+        }
+    }
 
     useEffect(() => {
     async function fetchData() {
@@ -48,20 +51,11 @@ const EstateListing = () => {
         const compareEstates = response.data.slice(4,6);
         setCompareEstates(compareEstates);
         // higherValue(compareEstates);
-        // higherNumber(compareEstates);
+        higherNumber(compareEstates);
         setEstates(result10);
     }
     fetchData();
   }, []); 
-
-//   const higherValue = (compareEstates) => {
-//     const estateA = compareEstates[0];
-//     const estateB = compareEstates[1];
-//     console.log(Math.max(estateA.prize_czk, estateB.prize_czk))
-//     // (estateA.prize_czk > estateB.prize_czk) ? true : false
-//     // (estateA.prize_czk > estateB.prize_czk) ? red : green
-//     (estateA.prize_czk > estateB.prize_czk) ? console.log('A is higher') : console.log('B is higher')
-// }
    
     return (
         <div className="container">
@@ -84,7 +78,7 @@ const EstateListing = () => {
                         <p>{i.name}</p>
                         {/* {{ backgroundColor: true ? "red" : "green" }} */}
                         {/* estateA.prize_czk > estateB.prize_czk */}
-                        <p style={{backgroundColor: (estateA.prize_czk > estateB.prize_czk) ? "red" : "green" }}><strong>Price</strong><span className="textalign-right">{i.prize_czk}</span></p>
+                        <p style={{backgroundColor: color}}><strong>Price</strong><span className="textalign-right">{i.prize_czk}</span></p>
                         <p><strong>Locality</strong><span className="textalign-right">{i.locality}</span></p>
                         <p style={{backgroundColor: (estateA.building_area > estateB.building_area) ? "green" : "red" }}><strong>Floor area</strong><span className="textalign-right">{i.building_area}</span></p>
                         <p style={{backgroundColor: (estateA.land_area > estateB.land_area) ? "green" : "red" }}><strong>Land area</strong> <span className="textalign-right">{i.land_area}</span></p>
