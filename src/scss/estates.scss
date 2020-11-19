@@ -1,5 +1,11 @@
 $card-color: #2e2d2d;
 
+@media screen and (max-width: 800px) {
+    .estate-card {
+        margin: .2em;
+        width: 17em;
+    }
+}
 .estates {
     display:flex;
     justify-content: center;
