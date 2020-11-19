@@ -4,22 +4,22 @@ $card-color: #2e2d2d;
     .estate-list {
         width: 100%;
         margin: .5rem 0;
-
-        .list-item {
-            width: 3rem;
-            height: 3rem;
+            
+            img {
+                min-width: 3rem;
+            }
 
             p {
                 overflow: hidden;
                 max-height: 3em;
             }
         }
-    }
 }
+
 @media screen and (max-width: 1000px) {
             p {
                 overflow: hidden;
-                max-height: 5em;
+                max-height: 5.5em;
             }
 }
 .estate-list {
