@@ -40,10 +40,10 @@ const Estates = () => {
 
                     <div className="estate__description">
                         <p className="estate__name">{i.name}</p>
-                        <p style={{backgroundColor: (estateA.prize_czk > estateB.prize_czk) ? '#aa3e3e' : 'rgb(80, 155, 96)'}}>Price<span className="textalign--right">{i.prize_czk}</span></p>
+                        <p style={{backgroundColor: (estateA.prize_czk > estateB.prize_czk) ? '#e66969' : '#63d468'}}>Price<span className="textalign--right">{i.prize_czk}</span></p>
                         <p>Locality<span className="textalign--right">{i.locality}</span></p>
-                        <p style={{backgroundColor: (estateA.building_area < estateB.building_area) ? '#aa3e3e' : 'rgb(80, 155, 96)'}}>Floor area<span className="textalign--right">{i.building_area}</span></p>
-                        <p style={{backgroundColor: (estateA.land_area < estateB.land_area) ? '#aa3e3e' : 'rgb(80, 155, 96)'}}><strong>Land area</strong> <span className="textalign--right">{i.land_area}</span></p>
+                        <p style={{backgroundColor: (estateA.building_area < estateB.building_area) ? '#e66969' : '#63d468'}}>Floor area<span className="textalign--right">{i.building_area}</span></p>
+                        <p style={{backgroundColor: (estateA.land_area < estateB.land_area) ? '#e66969' : '#63d468'}}><strong>Land area</strong> <span className="textalign--right">{i.land_area}</span></p>
 
                         <div>{i.company_name !== null ? 
                             <div className="estate__company"><img src={i.company_logo} alt={i.company_logo}/> 

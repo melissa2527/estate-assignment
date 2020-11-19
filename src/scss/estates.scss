@@ -1,4 +1,5 @@
 $card-color: #2e2d2d;
+$border: .05rem solid #979393;
 
 @media screen and (min-width: 500px) {
     .estate-card {
@@ -26,7 +27,7 @@ $card-color: #2e2d2d;
 
     .estate-card {
         border-radius: .25rem;
-        border: .05em solid lightslategray;
+        border: $border;
         box-shadow: .2em .25em .25em rgba(65, 64, 64, .5);
         margin: .5em;
         width: 20em;
@@ -43,7 +44,7 @@ $card-color: #2e2d2d;
         }
 
         p {
-            border: .05em solid rgba(112, 103, 105, .5);
+            border: $border;
             font-weight: bold;
             color: $card-color;
             padding: .1em 1em;

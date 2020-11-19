@@ -33,16 +33,15 @@ $card-color: #2e2d2d;
 
     .list-item {
             font-size: .5rem;
-            width: 8vw;
             height: 8vh;
-            margin: .2rem;
+            margin: .05rem;
             $card-color: #2e2d2d;
 
             img {
-                width: 6.5rem;
+                width: 9rem;
                 height: 4rem;
                 max-width: 8vw;
-                padding: .2rem;
+                padding: .1rem;
                 margin: auto;
                 cursor: pointer;  
             }
