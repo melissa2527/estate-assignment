@@ -1,9 +1,21 @@
 $card-color: #2e2d2d;
 
+@media screen and (min-width: 500px) {
+    .estate-card {
+        margin: .2em;
+        max-width: 50%;
+    }
+}
 @media screen and (max-width: 800px) {
     .estate-card {
         margin: .2em;
-        width: 17em;
+        max-width: 15em;
+
+        img {
+            margin: 0;
+            max-width: 15em;
+            max-height: 10em;
+        }
     }
 }
 .estates {
