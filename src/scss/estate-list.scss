@@ -1,41 +1,35 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
+$card-color: #2e2d2d;
 
 .estate-list {
-    
-    max-height: 30vh;
+    max-height: 40vh;
     display: flex;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    margin: .25rem;
+    width: 80vw;
+    margin: .5rem auto;
 
-    .estate-details {
-        cursor: pointer;
+    .list-item {
+            font-size: .5rem;
+            max-width: 8vw;
+            max-height: 8vh;
+            margin: .2rem;
+            $card-color: #2e2d2d;
+
+            img {
+                width: 6.5rem;
+                height: 4rem;
+                max-width: 8vw;
+                padding: .2rem;
+                margin: auto;
+                cursor: pointer;  
+            }
+
+            img:hover {
+                transition: .5s ease;
+                opacity: 0.3;
+                transform: translate(-5%, -5%);
+                -ms-transform: translate(-5%, -5%);
+            }
     }
-
-    .estate-list__img {
-        width: 6.5rem;
-        height: 4rem;
-        max-width: 8vw;
-        margin: .2rem;
-    }
-
-    .company__logo img {
-        width: 3em;
-    }
-
-    .estate-list__img:hover {
-        box-shadow: 2px 2px 2px solid gray;
-    }
-
-    div {
-        list-style-type: none;
-        font-size: .5rem;
-        max-width: 8vw;
-        margin: .2rem;
-    }
-
-
 }

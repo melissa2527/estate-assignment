@@ -30,9 +30,9 @@ const EstateListing = () => {
                 
             <div className="estate-list">
                 {estates.map(estate  => (
-                    <div key={estate.id}>
-                        <img className="estate-list__img" src={estate.images[0]} alt={estate.name}/>
-                        <p className="estate-list__name">{estate.name}</p>
+                    <div className="list-item" key={estate.id}>
+                        <img src={estate.images[0]} alt={estate.name}/>
+                        <p>{estate.name}</p>
                     </div>
                 ))}
             </div>
