@@ -4,9 +4,11 @@ import '../scss/estates.scss';
 
 
 const Estates = () => {
+  
     const [compareEstates, setCompareEstates] = useState([]);
     const [estateA, setEstateA] = useState('');
     const [estateB, setEstateB] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         async function fetchData() {
@@ -23,12 +25,14 @@ const Estates = () => {
             setEstateB(estateB);
             console.log('A', estateA);
             console.log('B', estateB);
+            setIsLoading(false);
         }
         fetchData();
       }, []); 
       
     return (
         <div>
+           {isLoading ? <h1>Loading...</h1> :
              <div className="estates">
                          {compareEstates.map(i => (
                         <div key={i.id} className="estate-card">
@@ -48,7 +52,9 @@ const Estates = () => {
                     </div>
                 </div>
                 ))}
+                
             </div>
+              }
         </div>
     )
 }

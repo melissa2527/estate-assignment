@@ -7,7 +7,6 @@ import '../scss/estate-list.scss';
 const EstateListing = () => {
 
     const [estates, setEstates] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
     
 
     useEffect(() => {
@@ -18,15 +17,12 @@ const EstateListing = () => {
         const result10 = response.data.slice(0, 10);
         console.log(result10)
         setEstates(result10);
-        setIsLoading(false);
     }
     fetchData();
   }, []); 
 
     return (
         <div className="container">
-            <div>
-            {isLoading ? <h1>Loading...</h1> :
                 
             <div className="estate-list">
                 {estates.map(estate  => (
@@ -36,12 +32,11 @@ const EstateListing = () => {
                     </div>
                 ))}
             </div>
-            }
+            
             
             <Estates />
-            </div>
-            
         </div>
+            
         )
     }
             
